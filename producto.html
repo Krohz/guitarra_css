@@ -8,7 +8,7 @@
     <meta name="author" content="Cristian Alvias">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GuitarLA : Nosotros</title>
+    <title>GuitarLA : Nombre Página</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,18 +39,34 @@
     <!-- HEADER END-->
 
     <!-- MAIN -->
-    <main class="nosotros__bg">
+    <main class="producto__dark">
         <div class="contenedor">
-            <h2 class="heading">Nosotros</h2>
-            <div class="nosotros">
-                <img src="img/nosotros.jpg" alt="Imagen nosotros">
-                <div class="nosotros__contenido">
-                    <p class="nosotros__texto">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum aperiam
-                        dolorem aut accusantium voluptatum, tempora error deserunt a nesciunt maxime ipsum aliquid
-                        aliquam veniam? Quisquam nostrum ab accusantium at saepe.</p>
-                    <p class="nosotros__texto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi id
-                        consequuntur reiciendis fuga quo atque illo voluptate necessitatibus ex delectus. Maxime
-                        officiis autem excepturi debitis? Qui saepe atque minus optio?</p>
+            <div class="producto">
+                <img class="producto__imagen" src="img/guitarra_02.png" alt="Producto Imagen">
+                <div class="producto__contenido">
+                    <h3 class="producto__nombre">Alvias</h3>
+                    <p class="producto__descripcion">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
+                        aperiam consectetur blanditiis rem nobis repellendus laboriosam ea sint cupiditate.</p>
+                    <p class="producto__precio">$899</p>
+                    <form class="producto__formulario">
+                        <label for="cantidad" class="producto__label">Cantidad:</label>
+                        <select id="cantidad" class="producto__cantidad">
+                            <option value="">-- Seleccione --</option>
+                            <option value="1">-- 1 --</option>
+                            <option value="2">-- 2 --</option>
+                            <option value="3">-- 3 --</option>
+                            <option value="4">-- 4 --</option>
+                            <option value="5">-- 5 --</option>
+                            <option value="6">-- 6 --</option>
+                            <option value="7">-- 7 --</option>
+                            <option value="8">-- 8 --</option>
+                            <option value="9">-- 9 --</option>
+                            <option value="10">-- 1 --</option>
+                        </select>
+
+                        <input type="submit" class="producto__agregar-carrito" value="agregar al carrito">
+                    </form>
+                    
                 </div>
             </div>
         </div>
