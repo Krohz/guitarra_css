@@ -33,18 +33,53 @@ img {
 }
 
 /*-------------- AQUI INICIO -------------*/
+/*HEADER*/
 .header{
     /*Degradado god para los heros tomar nota*/
     background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)), url(../img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
-
+    position: relative;
     padding: 5rem 0;
 }
 
 .header__guitarra{
     display: none;
+}
+
+@media (min-width: 992px) {
+    .header__guitarra{
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        /*animaciones*/
+        animation-name:mostraImagen;
+        animation-duration: 1s;
+        animation-delay:0s;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: 1;
+
+        /*La version corta de los arriba*/
+        animation: 1s ease-in-out 0s 1 mostraImagen;
+    }
+}
+/*ANIMACIONES GOD */
+@keyframes mostraImagen{
+    0%{
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0rem);
+    }
 }
 
 .header__barra{
@@ -83,6 +118,8 @@ img {
     gap: 2rem;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 @media (min-width: 768px) {
@@ -112,18 +149,38 @@ img {
     text-align: center;
 }
 
-.modelo__nombre{
-
+@media (min-width: 768px) {
+    .modelo{
+        text-align: left;
+        width: 50%;
+    }
 }
 
-.modelo__descripcion{
-
+.modelo__nombre{
+    font-size: 8rem;
 }
 
 .modelo__precio{
-
+    color: var(--primary);
+    font-size: 6rem;
+    font-weight: 900;
+    line-height: 0;
 }
 
 .modelo__enlace{
-
+    margin-top: 2rem;
+    text-decoration: none;
+    padding: 1rem 5rem;
+    color: white;
+    border: 2px solid var(--primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1.4rem;
+    transition: background-color .3s ease;
 }
+
+.modelo__enlace:hover{
+    background-color: var(--primary);
+}
+
+/*COLECCION*/
