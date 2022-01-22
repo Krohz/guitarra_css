@@ -17,7 +17,6 @@
 - Flexbox
 - CSS Grid
 - Mobile First
-- SASS
 - BEM
 
 # Author
