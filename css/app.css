@@ -1,9 +1,15 @@
 :root {
     --primary: #e99401;
-    --negro: #262626;
-    --blanco: #FFF;
+    --dark: #262626;
+    --light: #FFF;
     --fuente-principal: 'Outfit', sans-serif;
 }
+
+.dark-theme{
+    --dark: #fff;
+    --light: #262626;
+}
+
 html {
     font-size: 62.5%;
     box-sizing: border-box;
@@ -20,15 +26,104 @@ img {
     max-width: 100%;
 }
 
+[class$="__contenedor"]{
+    max-width: 120rem;
+    margin: 0 auto;
+    width: 95%;
+}
+
 /*-------------- AQUI INICIO -------------*/
 .header{
     /*Degradado god para los heros tomar nota*/
-    background-image: linear-gradient(to right, rgb(0 0 0 / .7), rgb(0 0 0 / .7)), url(../img/header.jpg);
+    background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)), url(../img/header.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50%;
+
+    padding: 5rem 0;
 }
 
 .header__guitarra{
     display: none;
+}
+
+.header__barra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .header__barra{
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.header__logo{
+    width: 30rem;
+}
+
+#icon{
+    width: 5rem;
+    cursor: pointer;
+    background-color: var(--light);
+    border-radius: 50%;
+}
+@media (min-width: 768px) {
+    #icon{
+        width: 3rem;
+    }
+}
+
+.navegacion{
+    margin-top: 5rem;
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .navegacion{
+        margin-top: 0rem;
+        flex-direction: row;
+    }
+}
+
+.navegacion__enlace{
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: .5rem;
+    font-size: 1.4rem;
+    font-weight: 700; 
+    transition: background-color .3s ease;
+}
+
+.navegacion__enlace:hover{
+    background-color: var(--primary);
+}
+
+.modelo{
+    color: white;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.modelo__nombre{
+
+}
+
+.modelo__descripcion{
+
+}
+
+.modelo__precio{
+
+}
+
+.modelo__enlace{
+
 }
