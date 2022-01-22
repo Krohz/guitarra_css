@@ -42,8 +42,9 @@ img {
     font-size: 4rem;
     font-weight: 900;
     color: #e99401;
-    margin: 5rem 0;
+    padding: 6rem 0;
     text-align: center;
+    margin: 0;
 }
 
 /*-------------- AQUI INICIO -------------*/
@@ -287,9 +288,9 @@ img {
 }
 
 @media (min-width: 768px) {
-    .cursos__grid{
+    .cursos__grid {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
         column-gap: 2rem;
     }
 }
@@ -299,14 +300,15 @@ img {
     text-align: center;
     font-size: 2.4rem;
 }
-.cursos__contenido{
+
+.cursos__contenido {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 @media (min-width: 768px) {
-    .cursos__contenido{
+    .cursos__contenido {
         grid-column: 2/3;
     }
 }
@@ -330,3 +332,116 @@ img {
     color: white;
 }
 
+/*---------- BLOGS --------------*/
+.blog{
+    background-color: var(--light);
+    padding-bottom: 6rem;
+}
+
+.blog__grid{
+    display: grid;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .blog__grid {
+        grid-template-columns: repeat(2,1fr);
+        gap: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .blog__grid {
+        grid-template-columns: repeat(4,1fr);
+        gap: 4rem;
+    }
+}
+
+.bloque__contenido{
+    padding: 1rem;
+}
+
+.bloque__nombre{
+    font-weight: 400;
+    color: var(--dark);
+    margin: 0;
+}
+
+.bloque__fecha{
+    color: var(--primary);
+}
+
+
+/*Como hacer que el texto tenga la cantidad que necesites sin tocar el html y solo css*/
+.bloque__texto{
+    color: var(--dark);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+    font-size: 1.6rem;
+}
+
+.bloque__enlace{
+    margin-top: 2rem;
+    display: block;
+    text-decoration: none;
+    color: var(--dark);
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color .3s ease;
+}
+
+.bloque__enlace:hover{
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+
+/*------FOOTER-------*/
+.footer{
+    background-color: var(--dark);
+    padding: 5rem 0;
+    margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer__contenido{
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+
+.footer__nav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+@media (min-width: 768px) {
+    .footer__nav{
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.footer__enlace{
+    font-size: 2.8rem;
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 700;
+}
+.footer__enlace:hover{
+    color: var(--primary);
+}
+.footer__copyright{
+    font-size: 2.8rem;
+    color: var(--light);
+    font-weight: 700;
+    text-align: center;
+}
