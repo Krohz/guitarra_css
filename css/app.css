@@ -32,13 +32,13 @@ img {
 }
 
 /*A cualquier lugar donde encuentres contenedor con = *  */
-[class*="__contenedor"] {
+[class*="contenedor"] {
     max-width: 120rem;
     margin: 0 auto;
     width: 95%;
 }
 
-[class*="__heading"] {
+[class*="heading"] {
     font-size: 4rem;
     font-weight: 900;
     color: #e99401;
@@ -444,4 +444,29 @@ img {
     color: var(--light);
     font-weight: 700;
     text-align: center;
+}
+
+/*Nosotros*/
+.nosotros__bg{
+    background-color: var(--light);
+}
+
+.nosotros{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    align-items: center;
+    gap: 2rem;
+    padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+    .nosotros{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 4rem;
+    }
+}
+
+.nosotros__texto{
+    color: var(--dark);
 }
