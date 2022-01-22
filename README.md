@@ -18,6 +18,7 @@
 - CSS Grid
 - Mobile First
 - BEM
+- JS
 
 # Author
 - Twitter - [@AcsKros](https://twitter.com/AcsKros)
