@@ -5,7 +5,7 @@
     --fuente-principal: 'Outfit', sans-serif;
 }
 
-.dark-theme{
+.dark-theme {
     --dark: #fff;
     --light: #262626;
 }
@@ -14,27 +14,41 @@ html {
     font-size: 62.5%;
     box-sizing: border-box;
 }
-*, *:before, *:after {
+
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
+
 body {
     font-size: 2rem;
     font-family: var(--fuente-principal);
     line-height: 1.5;
 }
+
 img {
     max-width: 100%;
 }
 
-[class$="__contenedor"]{
+/*A cualquier lugar donde encuentres contenedor con = *  */
+[class*="__contenedor"] {
     max-width: 120rem;
     margin: 0 auto;
     width: 95%;
 }
 
+[class*="__heading"] {
+    font-size: 4rem;
+    font-weight: 900;
+    color: #e99401;
+    margin: 5rem 0;
+    text-align: center;
+}
+
 /*-------------- AQUI INICIO -------------*/
 /*HEADER*/
-.header{
+.header {
     /*Degradado god para los heros tomar nota*/
     background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)), url(../img/header.jpg);
     background-repeat: no-repeat;
@@ -44,21 +58,21 @@ img {
     padding: 5rem 0;
 }
 
-.header__guitarra{
+.header__guitarra {
     display: none;
 }
 
 @media (min-width: 992px) {
-    .header__guitarra{
+    .header__guitarra {
         display: block;
         position: absolute;
         right: 0;
         bottom: 0;
 
         /*animaciones*/
-        animation-name:mostraImagen;
+        animation-name: mostraImagen;
         animation-duration: 1s;
-        animation-delay:0s;
+        animation-delay: 0s;
         animation-timing-function: ease-in-out;
         animation-iteration-count: 1;
 
@@ -66,53 +80,56 @@ img {
         animation: 1s ease-in-out 0s 1 mostraImagen;
     }
 }
+
 /*ANIMACIONES GOD */
-@keyframes mostraImagen{
-    0%{
+@keyframes mostraImagen {
+    0% {
         opacity: 0;
         transform: translateX(-10rem);
     }
 
-    50%{
+    50% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
         transform: translateX(0rem);
     }
 }
 
-.header__barra{
+.header__barra {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 @media (min-width: 768px) {
-    .header__barra{
+    .header__barra {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
     }
 }
 
-.header__logo{
+.header__logo {
     width: 30rem;
 }
 
-#icon{
+#icon {
     width: 5rem;
     cursor: pointer;
     background-color: var(--light);
     border-radius: 50%;
 }
+
 @media (min-width: 768px) {
-    #icon{
+    #icon {
         width: 3rem;
     }
 }
 
-.navegacion{
+.navegacion {
     margin-top: 5rem;
     display: flex;
     gap: 2rem;
@@ -123,51 +140,51 @@ img {
 }
 
 @media (min-width: 768px) {
-    .navegacion{
+    .navegacion {
         margin-top: 0rem;
         flex-direction: row;
     }
 }
 
-.navegacion__enlace{
+.navegacion__enlace {
     color: white;
     text-decoration: none;
     text-transform: uppercase;
     padding: .5rem;
     font-size: 1.4rem;
-    font-weight: 700; 
+    font-weight: 700;
     transition: background-color .3s ease;
 }
 
-.navegacion__enlace:hover{
+.navegacion__enlace:hover {
     background-color: var(--primary);
 }
 
-.modelo{
+.modelo {
     color: white;
     margin-top: 5rem;
     text-align: center;
 }
 
 @media (min-width: 768px) {
-    .modelo{
+    .modelo {
         text-align: left;
         width: 50%;
     }
 }
 
-.modelo__nombre{
+.modelo__nombre {
     font-size: 8rem;
 }
 
-.modelo__precio{
+.modelo__precio {
     color: var(--primary);
     font-size: 6rem;
     font-weight: 900;
     line-height: 0;
 }
 
-.modelo__enlace{
+.modelo__enlace {
     margin-top: 2rem;
     text-decoration: none;
     padding: 1rem 5rem;
@@ -179,8 +196,137 @@ img {
     transition: background-color .3s ease;
 }
 
-.modelo__enlace:hover{
+.modelo__enlace:hover {
     background-color: var(--primary);
 }
 
 /*COLECCION*/
+
+.productos {
+    background-color: var(--light);
+    padding: 1rem 0 10rem 0;
+    border-top: 1px solid white;
+}
+
+@media (min-width: 768px) {
+    .productos {
+        border-top: none;
+    }
+}
+
+.productos__grid {
+    display: grid;
+    gap: 4rem;
+}
+
+@media (min-width: 768px) {
+    .productos__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .productos__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.producto {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    column-gap: 1rem;
+    align-items: center;
+}
+
+.producto__nombre {
+    color: var(--dark);
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.producto__descripcion {
+    color: var(--dark);
+    font-size: 1.6rem;
+}
+
+.producto__precio {
+    color: var(--primary);
+    font-size: 6rem;
+    font-weight: 900;
+    margin: 0;
+}
+
+.producto__enlace {
+    margin-top: 2rem;
+    display: block;
+    text-decoration: none;
+    color: var(--dark);
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    transition: background-color .3s ease;
+}
+
+.producto__enlace:hover {
+    background-color: var(--primary);
+    color: var(--light);
+}
+
+/*Aprende*/
+
+.cursos {
+    background-image: linear-gradient(to right, rgb(0 0 0 / .65), rgb(0 0 0 / .65)), url(../img/cursos_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    padding: 10rem 0;
+    margin-top: 0rem;
+}
+
+@media (min-width: 768px) {
+    .cursos__grid{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        column-gap: 2rem;
+    }
+}
+
+.cursos__texto {
+    color: white;
+    text-align: center;
+    font-size: 2.4rem;
+}
+.cursos__contenido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .cursos__contenido{
+        grid-column: 2/3;
+    }
+}
+
+.cursos__enlace {
+    margin-top: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem 5rem;
+    border: 2px solid var(--primary);
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background-color .3s ease;
+}
+
+.cursos__enlace:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
