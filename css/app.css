@@ -19,3 +19,16 @@ body {
 img {
     max-width: 100%;
 }
+
+/*-------------- AQUI INICIO -------------*/
+.header{
+    /*Degradado god para los heros tomar nota*/
+    background-image: linear-gradient(to right, rgb(0 0 0 / .7), rgb(0 0 0 / .7)), url(../img/header.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.header__guitarra{
+    display: none;
+}
